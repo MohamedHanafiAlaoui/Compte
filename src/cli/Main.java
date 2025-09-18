@@ -1,5 +1,6 @@
-package ui;
+package cli;
 import java.util.Scanner;
+import service.CompteService;
 
 
 public class Main {
@@ -8,7 +9,7 @@ public class Main {
     	
     
         Scanner scanner = new Scanner(System.in);
-
+        CompteService service = new CompteService();
         int choice = 0;
         do {
         
@@ -19,7 +20,8 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                	Comptes.menuComptes(scanner);
+                	
+                	service.ajouterCompte();
                     break;
                 case 2:
                 	System.out.println("hzlo");
@@ -46,7 +48,7 @@ public class Main {
         System.out.println("#===================menu===================#");
         System.out.println("|1. Create compte 🏦                        |");
         System.out.println("|2. Register compte user 💻                 |");
-        System.out.println("|3. Exit 3  📴                               |");
+        System.out.println("|3. Exit 3  📴                              |");
         System.out.println("#==========================================#");
     }
 }
