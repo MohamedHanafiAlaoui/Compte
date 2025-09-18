@@ -62,7 +62,7 @@ public class CompteService
             System.out.println("Choix invalide !");
         }
         
-        scanner.close();
+   
 
 		
 	}
