@@ -67,5 +67,10 @@ public class CompteService
 		
 	}
 	
+     public Compte rechercherCompte(String code)
+     {
+    	 return comptes.get(code);
+     };
+
 	
 }
