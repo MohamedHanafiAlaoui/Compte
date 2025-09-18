@@ -1,5 +1,6 @@
 package  metier;
 import java.util.ArrayList;
+import java.util.Random;
 import metier.Operation;
 
 public abstract class Compte
@@ -8,21 +9,26 @@ public abstract class Compte
 	protected double solde;
 	ArrayList <Operation>  listeOperations ;
 	
-	public  Compte(String code, double solde)
+	public  Compte( double solde)
 	{
 
 
-        if (!code.matches("CPT-\\d{5}"))
-        {
-            throw new IllegalArgumentException(
-                "Code invalide ! Le format doit être CPT-12345"
-                );
-        }
+
 
     
-		this.code=code;
+		this.code=generercode();
 		this.solde= solde;
 		this.listeOperations = new ArrayList<>();
+	}
+	
+	
+	public String generercode()
+	{
+		Random random = new Random();
+		
+		int  nombre =10000 + random.nextInt(90000);
+		
+		return "CPT-"+ nombre ;
 	}
 
 
@@ -48,6 +54,12 @@ public abstract class Compte
 
     public void setListeOperations(ArrayList<Operation> listeOperations) {
         this.listeOperations = listeOperations;
+    }
+    
+    
+    public void verser(double montant) {
+        solde += montant;
+        System.out.println("Versement effectué : " + montant + " | Nouveau solde : " + solde);
     }
     
     public abstract void retirer(double montant);
