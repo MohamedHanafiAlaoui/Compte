@@ -2,6 +2,7 @@ package  metier;
 import java.util.ArrayList;
 import java.util.Random;
 import metier.Operation;
+import metier.Versement;
 
 public abstract class Compte
 {	
@@ -59,6 +60,9 @@ public abstract class Compte
     
     public void verser(double montant) {
         solde += montant;
+        Versement  versement = new Versement(montant,code);
+        
+        listeOperations.add(versement);
         System.out.println("Versement effectué : " + montant + " | Nouveau solde : " + solde);
     }
     
