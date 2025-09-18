@@ -73,6 +73,14 @@ public abstract class Compte
     public abstract  void afficherDetails();
 	
 	
-	
+    public void afficherOperations() {
+        if (listeOperations.isEmpty()) {
+            System.out.println("Aucune opération trouvée.");
+        } else {
+            for (Operation op : listeOperations) {
+                op.afficherDetails();
+            }
+        }
+    }
 	
 }
