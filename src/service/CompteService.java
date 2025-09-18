@@ -22,19 +22,23 @@ public class CompteService
 	public void ajouterCompte()
 	{
 		
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println( "| 1-Compte Courant   |\n"
         		+ 			"|2-Compte Epargne    |");
         
-        int choix = sc.nextInt();
+        int choix = scanner.nextInt();
         
         if(choix == 1)
         {
         	System.out.print("entre solde : ");
-        	double solde = sc.nextDouble();
+        	double solde = scanner.nextDouble();
         	
-        	System.out.print("entre solde : ");
-        	double decouvert  = sc.nextDouble();
+        	System.out.print("entre découvert : ");
+        	double decouvert  = scanner.nextDouble();
+        	
+        	
+        	
+        	
         	
         	CompteCourant NewCompteCourant = new CompteCourant(decouvert,solde);  
         	
@@ -44,21 +48,24 @@ public class CompteService
         }else if(choix == 2)
         {
         	System.out.print("entre solde : ");
-        	double solde = sc.nextDouble();
+        	double solde = scanner.nextDouble();
         	
         	System.out.print("entre tauxInteret : ");
-        	double tauxInteret  = sc.nextDouble();
+        	double tauxInteret  = scanner.nextDouble();
         	
         	CompteEpargne NewCompteEpargne = new CompteEpargne(tauxInteret,solde);  
         	
         	comptes.put(NewCompteEpargne.getCode(),NewCompteEpargne);
         	
         	NewCompteEpargne.afficherDetails();
+        }else {
+            System.out.println("Choix invalide !");
         }
         
-        
+        scanner.close();
 
 		
 	}
+	
 	
 }
