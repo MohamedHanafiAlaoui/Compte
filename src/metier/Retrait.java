@@ -20,8 +20,14 @@ public class Retrait extends Operation {
 	
 	public void setdestination()
 	{
-		this.destination =destination;
+		this.destination = destination;
 	}
+	
+	
+	  @Override
+	    public void afficherDetails() {
+		  
+	  }
 	
 	
     
