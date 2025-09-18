@@ -35,7 +35,8 @@ public abstract class Operation
 		this.montant = montant;
 	}
 
-
+    
+    public abstract void afficherDetails() ;
 
 
 }
