@@ -20,7 +20,15 @@ public class Versement extends Operation
     }
 
 
-
+    @Override
+    public void afficherDetails() {
+        System.out.println("#==== Détails Versement ====#");
+        System.out.println("Numéro      : " + getNumero());
+        System.out.println("Date        : " + getDate());
+        System.out.println("Montant     : " + getMontant() );
+        System.out.println("Source      : " + source);
+        System.out.println("#===========================#");
+    }
 
 
 
