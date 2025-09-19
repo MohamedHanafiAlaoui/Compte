@@ -4,6 +4,8 @@ import java.util.Scanner;
 import service.CompteService;
 import service.OperationService;
 import metier.Compte;
+import metier.Operation;
+
 
 public class Main {
 
@@ -86,10 +88,32 @@ public class Main {
                     }
                     break;
                 case 5:
-                    // service.consulterSolde();
+                    System.out.print("Entrez le code du compte : ");
+                    String codeSolde = scanner.nextLine();
+                    Compte compteSolde = service.rechercherCompte(codeSolde);
+                    if (compteSolde != null) {
+                        System.out.println("Solde du compte " + compteSolde.getCode() + " : " + compteSolde.getSolde());
+                    } else {
+                        System.out.println("Compte introuvable !");
+                    }
                     break;
                 case 6:
-                    // service.consulterOperations();
+                    System.out.print("Entrez le code du compte : ");
+                    String codeOp = scanner.nextLine();
+                    Compte compteOp = service.rechercherCompte(codeOp);
+
+                    if (compteOp != null) {
+                        System.out.println("Liste des opérations pour le compte " + compteOp.getCode() + " :");
+                        if (compteOp.getListeOperations().isEmpty()) {
+                            System.out.println("Aucune opération enregistrée.");
+                        } else {
+                            for (Operation op : compteOp.getListeOperations()) {
+                                op.afficherDetails();
+                            }
+                        }
+                    } else {
+                        System.out.println("Compte introuvable !");
+                    }
                     break;
                 case 0:
                     System.out.println("Exiting the program.");
