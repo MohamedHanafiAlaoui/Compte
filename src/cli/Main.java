@@ -32,6 +32,7 @@ public class Main {
                     Compte compte = service.rechercherCompte(code);
 
                     if (compte != null) {
+                        System.out.println("#==========================#");
                         System.out.print("Entrer le montant à verser : ");
                         double montant = scanner.nextDouble();
 
@@ -44,6 +45,8 @@ public class Main {
                         System.out.println("Compte introuvable !");
 
                     }
+                        System.out.println("#==========================#");
+
 
                     break;
                 case 3:
