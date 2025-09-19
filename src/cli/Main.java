@@ -45,10 +45,45 @@ public class Main {
 
                     break;
                 case 3:
-                    // service.effectuerRetrait();
+                	 System.out.print("Entrez le code du compte : ");
+                	 String codeRetrait = scanner.nextLine();
+                	 Compte CompteRetrait = service.rechercherCompte(codeRetrait);
+                	 
+                	 if(CompteRetrait != null)
+                	 {
+                		 System.out.print("Entrer le montant à retirer : ");
+                		 double montantRetrait = scanner.nextDouble();
+                		 scanner.nextLine();
+                	        System.out.print("Entrer la destination du retrait : ");
+                	        String destination = scanner.nextLine();
+
+                	        serviceOperation.effectuerRetrait(CompteRetrait, montantRetrait, destination);
+
+
+                	 }else {
+                	        System.out.println("Compte introuvable !");
+                	    }
+                	
                     break;
                 case 4:
-                    // service.effectuerVirement();
+                	System.out.print("Entrez le code du compte source : ");
+                    String codeSource = scanner.nextLine();
+                    Compte compteSource = service.rechercherCompte(codeSource);
+
+                    System.out.print("Entrez le code du compte destination : ");
+                    String codeDest = scanner.nextLine();
+                    Compte compteDest = service.rechercherCompte(codeDest);
+
+                    if (compteSource != null && compteDest != null) {
+                        System.out.print("Entrez le montant à transférer : ");
+                        double montantVirement = scanner.nextDouble();
+                        scanner.nextLine();
+
+                        serviceOperation.effectuerVirement(compteSource, compteDest, montantVirement);
+
+                    } else {
+                        System.out.println("Un des comptes est introuvable !");
+                    }
                     break;
                 case 5:
                     // service.consulterSolde();
