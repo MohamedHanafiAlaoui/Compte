@@ -43,4 +43,11 @@ public class CompteCourant extends Compte
     	
     }
 	
+
+    public double getDecouvert() {
+        return decouvert;
+    }
+    public void setDecouvert(double decouvert) {
+        this.decouvert = decouvert;
+    }
 }
