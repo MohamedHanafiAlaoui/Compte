@@ -23,8 +23,9 @@ public class CompteService
 	{
 		
         Scanner scanner = new Scanner(System.in);
-        System.out.println( "| 1-Compte Courant   |\n"
-        		+ 			"|2-Compte Epargne    |");
+        
+        System.out.println( "|1-Compte Courant   |\n"
+        		+ 			"|2-Compte Epargne   |");
         
         int choix = scanner.nextInt();
         
