@@ -14,7 +14,11 @@ public class OperationService
 
     public void effectuerVersement(Compte compte, double montant, String source) {
         compte.verser(montant, source);
-        System.out.println("Versement de " + montant + " effectué sur le compte " + compte.getCode());
+        System.out.println("#==========================#");
+        
+        System.out.println("Versement de :" + montant + " effectué sur le compte :" + compte.getCode());
+        System.out.println("#==========================#");
+
     }
     
     public void effectuerRetrait(Compte compte, double montant, String destination)
