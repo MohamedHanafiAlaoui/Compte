@@ -22,20 +22,20 @@ public class CompteService
 	public void ajouterCompte()
 	{
 		
-        Scanner scanner = new Scanner(System.in);
+        Scanner sca = new Scanner(System.in);
         
         System.out.println( "|1-Compte Courant   |\n"
         		+ 			"|2-Compte Epargne   |");
         
-        int choix = scanner.nextInt();
+        int choix = sca.nextInt();
         
         if(choix == 1)
         {
         	System.out.print("entre solde : ");
-        	double solde = scanner.nextDouble();
+        	double solde = sca.nextDouble();
         	
         	System.out.print("entre découvert : ");
-        	double decouvert  = scanner.nextDouble();
+        	double decouvert  = sca.nextDouble();
         	
         	
         	
@@ -49,10 +49,10 @@ public class CompteService
         }else if(choix == 2)
         {
         	System.out.print("entre solde : ");
-        	double solde = scanner.nextDouble();
+        	double solde = sca.nextDouble();
         	
         	System.out.print("entre tauxInteret : ");
-        	double tauxInteret  = scanner.nextDouble();
+        	double tauxInteret  = sca.nextDouble();
         	
         	CompteEpargne NewCompteEpargne = new CompteEpargne(tauxInteret,solde);  
         	
