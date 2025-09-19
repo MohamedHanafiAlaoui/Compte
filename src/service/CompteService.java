@@ -23,9 +23,12 @@ public class CompteService
 	{
 		
         Scanner sca = new Scanner(System.in);
-        
-        System.out.println( "|1-Compte Courant   |\n"
-        		+ 			"|2-Compte Epargne   |");
+        System.out.println("Quel type de compte voulez-vous créer ?");
+        System.out.println( "|1-Compte Courant                      |\n"
+        		+ 			"|2-Compte Epargne                      |");
+
+		System.out.println("#=====================================#\n");
+		System.out.print("Votre choix : ");
         
         int choix = sca.nextInt();
         
